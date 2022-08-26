@@ -16,9 +16,7 @@ app.use(require('./routes/users.route'));
 app.use(errorMiddleware);
 
 mongoose
-  .connect(
-    'mongodb+srv://admin:admin@cluster0.nxclk.mongodb.net/anglo-school-app?authSource=admin&replicaSet=atlas-pzfzfv-shard-0&readPreference=primary&ssl=true'
-  )
+  .connect(process.env.MONGO_DB)
   .then(() => console.log('Успешное соединение...'))
   .catch(() => console.log('Пал хила'));
 
