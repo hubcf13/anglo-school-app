@@ -13,6 +13,7 @@ app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
 app.use(require('./routes/users.route'));
+app.use(require('./routes/coursers.route'));
 app.use(errorMiddleware);
 
 mongoose

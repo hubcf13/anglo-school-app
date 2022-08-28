@@ -1,10 +1,9 @@
 const CourseModel = require('../models/Course.model');
 
-const { name, language, price, duration } = req.body;
-
 module.exports.courseController = {
   addCourse: async (req, res) => {
     try {
+      const { name, language, price, duration } = req.body;
       const addCourse = await CourseModel.create({
         name: name,
         language: language,
@@ -18,6 +17,7 @@ module.exports.courseController = {
   },
   editCourse: async (req, res) => {
     try {
+      const { name, language, price, duration } = req.body;
       const editCourse = await CourseModel.findByIdAndUpdate(req.params.id, {
         name: name,
         language: language,
